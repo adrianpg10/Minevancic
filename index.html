@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Minevancic</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="css/minevanciccss.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/minevancicjs.js">
+    </script>
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+
+                <div class="jumbotron jumbotron-fluid"
+                    style="background:url(img/fondo.png);color:#edd154;text-align: center; border-radius: 10px; ">
+                    <div class="container-fluid">
+                        <h1>Minevancic</h1>                    
+                        
+                    </div>
+                </div>
+
+
+            </div>
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+      
+
+    <div class="row" style="display: flex;">
+        <div class="col-12" id="centrar">
+            <button type="button" class="btn btn-primary" 
+                onclick="empezar()" id="inicio">START</button>
+
+            <button type="button" class="btn btn-primary"
+            data-toggle="modal" data-target="#myModal" id="instrucciones">RULES</button>
+           
+          </div>
+
+       
+
+    </div>
+    
+    <div class="container-fluid" >
+    <div class="row" style="display: flex;">
+    <div class="col-12">
+      <h2 id="crono" class="btn btn-primary" ></h2><br/>
+    <h2 id="nivel" class="btn btn-primary" ></h2>
+    <h2 id="minasActuales" class="btn btn-primary" ></h2>
+    <h2 id="puntuacion" class="btn btn-primary" ></h2>
+   
+    
+    
+    
+   
+    
+</div>
+    </div>
+</div>
+
+ 
+
+    <div class="container-fluid" style="display:flex;"  >
+
+        <div class="row" style="display:flex" >
+            <div class="col-12" >
+                <div id="tablero" >
+
+                    <div id="00"></div>
+                    <div id="10"></div>
+                    <div id="20"></div>
+                    <div id="30"></div>
+                    <div id="40"></div>
+                    <div id="50"></div>
+                    <div id="60"><img src="img/salida1.png" /></div>
+                    <div id="01"></div>
+                    <div id="11"></div>
+                    <div id="21"></div>
+                    <div id="31"></div>
+                    <div id="41"></div>
+                    <div id="51"></div>
+                    <div id="61"></div>
+                    <div id="02"></div>
+                    <div id="12"></div>
+                    <div id="22"></div>
+                    <div id="32"></div>
+                    <div id="42"></div>
+                    <div id="52"></div>
+                    <div id="62"></div>
+                    <div id="03"></div>
+                    <div id="13"></div>
+                    <div id="23"></div>
+                    <div id="33"></div>
+                    <div id="43"></div>
+                    <div id="53"></div>
+                    <div id="63"></div>
+                    <div id="04"></div>
+                    <div id="14"></div>
+                    <div id="24"></div>
+                    <div id="34"></div>
+                    <div id="44"></div>
+                    <div id="54"></div>
+                    <div id="64"></div>
+                    <div id="05"><img src="img/start.png" /></div>
+                    <div id="15"></div>
+                    <div id="25"></div>
+                    <div id="35"></div>
+                    <div id="45"></div>
+                    <div id="55"></div>
+                    <div id="65"></div>
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+        
+        <div class="container-fluid" style="margin-top:100px" id="botones">
+
+          <div class="row" style="display: flex; width: 100%;">
+              <div class="col-2" style="margin-left:35px;  ">
+                  <button type="button" class="btn btn-primary" style="color: #edd154; background-color:#e24260; "
+                      onclick="arriba()" id="arriba">ᐃ</button>
+              </div>
+          </div>
+          <div class="row" style=" width: 100%; ">
+
+              <div class="col-12" >
+                  <button type="button" class="btn btn-primary" style="color: #edd154; background-color:#e24260; "
+                      onclick="izquierda()" id="izquierda">ᐊ</button>
+                  <button type="button" class="btn btn-primary"
+                      style="color: #edd154; background-color:#e24260; margin-left: 29px; " onclick="derecha()"
+                      id="derecha">ᐅ</button>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-2" style="margin-left:35px;">
+                  <button type="button" class="btn btn-primary" style="color: #edd154; background-color:#e24260;"
+                      onclick="abajo()" id="abajo">ᐁ</button>
+              </div>
+
+          </div>
+          <br/>
+       
+          <div class="row">
+            <div class="col-12" style="margin-left:25px;">
+                <button type="button" class="btn btn-primary" style="color: #edd154; background-color:#e24260;"
+                    onclick="pista()" id="pista">Help</button>
+            </div>
+
+        </div>
+  
+
+      </div>
+
+
+    </div>
+       
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" >Rules</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  
+                </div>
+                <div class="modal-body">
+
+                 <ul>
+
+                    <li>Go from the lower left corner to the upper right corner without stepping on any mines.</li>
+                    <li>Be careful with the time! If time runs out, you lose.</li>
+                    <li>You cannot go back, if you go back you will lose 20 points</li>
+                    <li>There will be hidden mines!</li>
+                    <li>The number of mines will increase depending on the level.</li>
+                    <li>If the mine is 3 or more squares away Rover will turn green.</li>
+                    <li>If the mine is 2 squares away, Rover will turn yellow.</li>
+                    <li>If the mine is 1 Rover square away it will turn red.</li>
+                    <li> You can ask for help, but 100 points will be deducted</li>
+
+                 </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+
+
+          <div class="modal fade" id="over" role="dialog">
+            <div class="modal-dialog">
+
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" >GAME OVER</h1>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  
+                </div>
+                <div class="modal-body">
+
+                <h2>Wow, you stepped on a mine!</h2>
+                <img src="img/bombaexplotada.png"/>
+                </div>
+
+              </div>
+              
+            </div>
+
+
+          </div>
+
+
+          <div class="modal fade" id="win" role="dialog">
+            <div class="modal-dialog">
+
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" >YOU WIN</h1>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  
+                </div>
+                <div class="modal-body">
+
+                <h3>Congratulations, you have passed all the levels without hitting a mine.</h3> 
+                <h4 id="puntostotales"></h4> 
+                <h4 id="tiempototal"></h4>                
+                <img src="img/win.png"/>
+                </div>
+
+              </div>
+              
+            </div>
+
+
+          </div>
+
+          <div class="modal fade" id="return" role="dialog">
+            <div class="modal-dialog">
+
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" >Warning!! -20 Points</h1>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  
+                </div>
+                <div class="modal-body">
+
+                <h2>You can’t go back where you stepped!</h2>
+               
+              <img src="img/warning.png" style="height: 200px; width: 200px;margin-left: 26%;"/>
+              
+                
+                </div>
+
+              </div>
+              
+            </div>
+
+
+          </div>
+
+          <div class="modal fade" id="overpoint" role="dialog">
+            <div class="modal-dialog">
+
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" >GAME OVER</h1>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  
+                </div>
+                <div class="modal-body">
+
+                <h2>Wow, you don't have any more points!!</h2>
+               
+                </div>
+
+              </div>
+              
+            </div>
+
+
+          </div>
+
+          
+          <div class="modal fade" id="overtime" role="dialog">
+            <div class="modal-dialog">
+
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" >GAME OVER</h1>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  
+                </div>
+                <div class="modal-body">
+
+                <h2>Your time is over!</h2>
+                <img src="img/tiempo.jpg"/>
+               
+                </div>
+
+              </div>
+              
+            </div>
+
+
+          </div>
+
+
+    </div>
+
+</body>
+
+</html>
